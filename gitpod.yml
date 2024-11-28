@@ -1,0 +1,23 @@
+tasks:
+  - name: Install Dependencies
+    init: |
+      npm install
+    command: |
+      npm run dev
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+
